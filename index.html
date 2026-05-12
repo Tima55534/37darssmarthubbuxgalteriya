@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soliqlar va Hisobotlar - 37 Dars</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #D2FF28;
+            --dark-bg: #111311;
+            --card-bg: #1B1E1C;
+            --text-white: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            background-color: var(--dark-bg) !important;
+            color: var(--text-white);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+            background-image: radial-gradient(circle at 10% 20%, rgba(210, 255, 40, 0.12) 0%, transparent 60%) !important;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slides-container {
+            width: 100vw;
+            height: 100vh;
+            max-width: 100%;
+            max-height: 100%;
+            aspect-ratio: auto;
+            border: none !important;
+            box-shadow: none !important;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 2.6rem !important;
+            color: var(--primary-green) !important;
+            display: inline-block;
+            border-bottom: 2px solid var(--primary-green) !important;
+            padding-bottom: 8px;
+            margin: 0;
+            font-weight: 800;
+        }
+
+        .highlight {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .glass-box {
+            background: var(--card-bg) !important;
+            border: 1px solid rgba(210, 255, 40, 0.12) !important;
+            border-radius: 16px !important;
+            padding: 35px 45px !important;
+            width: 100%;
+            max-width: 1050px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        .calc-step {
+            background: #232623 !important;
+            border-left: 3px solid var(--primary-green) !important;
+            padding: 18px 22px !important;
+            margin-bottom: 16px;
+            border-radius: 8px !important;
+            font-size: 1.2rem !important;
+            line-height: 1.5;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .calc-step-title {
+            font-size: 1.25rem;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .section-header {
+            font-size: 2.8rem !important;
+            font-weight: 800;
+            text-align: center;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .topic-subheader {
+            font-size: 2.3rem !important;
+            font-weight: 700;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            position: absolute !important;
+            bottom: 30px !important;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .control-btn {
+            background: #0f1310 !important;
+            border: 1.5px solid rgba(210, 255, 40, 0.4) !important;
+            color: var(--primary-green) !important;
+            width: 45px !important;
+            height: 45px !important;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .slide {
+            padding: 40px !important;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        th {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid var(--primary-green);
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .table-highlight {
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        .table-danger {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slides-container">
+        <!-- Slide 1: Intro -->
+        <div class="slide active" id="slide-1">
+            <div class="section-header">6-BO'LIM: SOLIQLAR VA HISOBOTLAR</div>
+            <div class="section-header" style="font-size: 1.8rem !important; opacity: 0.8; margin-top: -10px;">37-dars
+            </div>
+            <h1 class="topic-subheader" style="line-height: 1.4; margin-top: 30px; font-size: 3.5rem !important;">
+                Soliq va Moliyaviy hisobotlar farqi<br>
+                Foyda solig'i (Soliq kodeksi)
+            </h1>
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.6rem; color: var(--primary-green); margin: 15px 0;">✓ Soliq hisobotlari
+                    topshirish muddatlari</p>
+                <p style="font-size: 1.6rem; color: var(--primary-green); margin: 15px 0;">✓ Moliyaviy hisobotlar farqi
+                </p>
+                <p style="font-size: 1.6rem; color: var(--primary-green); margin: 15px 0;">✓ Foyda solig'i hisoblash
+                    tartibi</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Soliq hisobotlari -->
+        <div class="slide" id="slide-2">
+            <div class="title-wrapper" style="text-align: center; margin-bottom: 30px;">
+                <h2>Soliq hisobotlari va muddatlari</h2>
+            </div>
+            <div class="glass-box">
+                <div class="calc-step">
+                    <span class="calc-step-title">Jismoniy shaxslar daromad solig'i hisoboti</span>
+                    Har oyning <span class="highlight">15-sanasigacha</span> topshiriladi.
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">Aylanma soliq hisoboti</span>
+                    Har oyning <span class="highlight">15-sanasigacha</span> topshiriladi (agar soddalashtirilgan soliq
+                    tizimida bo'lsa).
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">QQS hisoboti</span>
+                    Har oyning <span class="highlight">20-sanasigacha</span> topshiriladi.
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">Foyda solig'i hisoboti</span>
+                    Har <span class="highlight">3 oyda bir marotaba (choraklik)</span> keyingi oyning 20-sanasigacha
+                    topshiriladi.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Moliyaviy hisobotlar -->
+        <div class="slide" id="slide-3">
+            <div class="title-wrapper" style="text-align: center; margin-bottom: 30px;">
+                <h2>Moliyaviy hisobotlar</h2>
+            </div>
+            <div class="glass-box">
+                <p style="font-size: 1.25rem; margin-bottom: 25px; line-height: 1.6;"><strong>Moliyaviy
+                        hisobotlar</strong> — bu korxonaning hisobot davridagi moliyaviy holati va faoliyat natijalarini
+                    aks ettiruvchi hujjatlar to'plamidir. Ular asosan <strong>yillik</strong> hisobot sifatida
+                    topshiriladi.</p>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">Moliyaviy natijalar to'g'risidagi hisobot (2-shakl)</span>
+                    Keyingi yilning <span class="highlight">15-fevraligacha</span> topshiriladi.
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">Buxgalteriya balansi (1-shakl)</span>
+                    Keyingi yilning <span class="highlight">15-fevraligacha</span> topshiriladi.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Kimlar to'laydi -->
+        <div class="slide" id="slide-4">
+            <div class="title-wrapper" style="text-align: center; margin-bottom: 30px;">
+                <h2>Kimlar foyda solig'i to'laydi va qancha?</h2>
+            </div>
+            <div class="glass-box">
+                <div class="calc-step">
+                    <span class="calc-step-title">Soliq to‘lovchilar (SK 294-modda):</span>
+                    • O‘zbekiston rezidentlari (yuridik shaxslar).<br>
+                    • O‘zbekistonda doimiy muassasa (DM) orqali faoliyat yurituvchi norezidentlar.
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">Soliq stavkalari (SK 337-modda):</span>
+                    🏢 <strong>Umumiy stavka:</strong> 15%<br>
+                    🏦 <strong>Banklar va uyali aloqa operatorlari:</strong> 20%<br>
+                    📉 <strong>Eksportdan tushgan foyda uchun:</strong> 0% (SKda belgilangan shartlar bajarilganda).
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Soliq bazasi -->
+        <div class="slide" id="slide-5">
+            <div class="title-wrapper" style="text-align: center; margin-bottom: 30px;">
+                <h2>Foyda solig'i bazasini hisoblash (SK 295-modda)</h2>
+            </div>
+            <div class="glass-box">
+                <div class="calc-step" style="text-align: center; font-size: 1.4rem !important;">
+                    <span style="color: var(--primary-green); font-weight: bold;">Soliq bazasi</span> =
+                    Jami daromad − Chegiriladigan xarajatlar
+                </div>
+
+                <h3 style="color: var(--primary-green); margin-top: 25px; margin-bottom: 15px; font-size: 1.4rem;">
+                    Amaldagi farqni tushunamiz:</h3>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">🟢 Buxgalteriya foydasi:</span>
+                    Jami daromad – <strong>Barcha real xarajatlar.</strong> (Hujjatli yoki hujjatsiz, korxona qilgan
+                    barcha xarajatlar).
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">🔴 Soliqqa tortiladigan foyda:</span>
+                    Jami daromad – <strong>Faqat SK ruxsat bergan xarajatlar.</strong> (Iqtisodiy oqlangan va hujjat
+                    bilan tasdiqlangan xarajatlar).
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Jami daromadlar -->
+        <div class="slide" id="slide-6">
+            <div class="title-wrapper" style="text-align: center; margin-bottom: 30px;">
+                <h2>Soliqqa tortiladigan jami daromadlar (SK 297-modda)</h2>
+            </div>
+            <div class="glass-box">
+                <div class="calc-step">
+                    <span class="calc-step-title">Asosiy daromadlar:</span>
+                    Mahsulot va xizmatlarni sotishdan tushgan tushum (QQSsiz summa).
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">Boshqa daromadlar (operatsiyadan tashqari):</span>
+                    • Ijobiy kurs farqi (valyuta konvertatsiyasidagi foyda).<br>
+                    • Olingan foizlar va dividendlar.<br>
+                    • Bepul olingan mol-mulk yoki mulkiy huquqlar.<br>
+                    • Hisobdan chiqarilgan kreditorlik qarzlar (shartnomaviy majburiyat tugaganda).
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Chegiriladigan xarajatlar -->
+        <div class="slide" id="slide-7">
+            <div class="title-wrapper" style="text-align: center; margin-bottom: 30px;">
+                <h2>Chegiriladigan xarajat(3 ta oltin qoida)</h2>
+            </div>
+            <div class="glass-box">
+                <p style="font-size: 1.25rem; margin-bottom: 25px;">
+                    <strong>SK 305-modda:</strong> Xarajat chegirilishi uchun u <strong>bir vaqtning o‘zida</strong>
+                    quyidagi 3 ta shartga javob berishi kerak:
+                </p>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">1. Iqtisodiy jihatdan oqlangan bo'lishi:</span>
+                    Korxonaning daromad olishiga qaratilgan faoliyat uchun qilingan bo'lishi shart.
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">2. Hujjatlar bilan tasdiqlangan bo'lishi:</span>
+                    E-Faktura, kassa cheklari, dalolatnomalar (aktlar) muhr va imzolar bilan to'liq rasmiylashtirilgan
+                    bo'lishi kerak.
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">3. Cheklovlarga tushmasligi kerak:</span>
+                    Soliq kodeksining 317-moddasiga (chegirilmaydigan xarajatlar ro‘yxatiga) kirmasligi kerak.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Misol -->
+        <div class="slide" id="slide-8">
+            <div class="title-wrapper" style="text-align: center; margin-bottom: 10px;">
+                <h2>Buxgalteriya foydasi va Soliq foydasi farqi</h2>
+            </div>
+            <div class="glass-box" style="padding: 20px 40px !important;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ko‘rsatkichlar</th>
+                            <th class="text-right">Buxgalteriya hisobi</th>
+                            <th class="text-right">Soliq hisobi (SK)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Jami daromad</td>
+                            <td class="text-right">500 000 000</td>
+                            <td class="text-right">500 000 000</td>
+                        </tr>
+                        <tr>
+                            <td>2. Real xarajatlar</td>
+                            <td class="text-right">350 000 000</td>
+                            <td class="text-right">−</td>
+                        </tr>
+                        <tr>
+                            <td>3. Shundan: Hujjatsiz xarajat</td>
+                            <td class="text-right">−</td>
+                            <td class="text-right table-danger">20 000 000 (chegirilmaydi)</td>
+                        </tr>
+                        <tr>
+                            <td>4. Tan olingan xarajat</td>
+                            <td class="text-right">350 000 000</td>
+                            <td class="text-right">330 000 000</td>
+                        </tr>
+                        <tr>
+                            <td class="table-highlight">5. Foyda (Daromad - Xarajat)</td>
+                            <td class="text-right table-highlight">150 000 000</td>
+                            <td class="text-right table-highlight">170 000 000</td>
+                        </tr>
+                        <tr style="border-bottom: none;">
+                            <td style="font-weight: bold; padding-top: 20px;">To‘lanadigan soliq (15%)</td>
+                            <td class="text-right" style="padding-top: 20px;">−</td>
+                            <td class="text-right table-danger"
+                                style="font-weight: bold; padding-top: 20px; font-size: 1.3rem;">25 500 000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="calc-step" style="margin-top: 15px;">
+                    <span class="calc-step-title">Xulosa:</span>
+                    Korxona kassa hisobida aslida <strong>150 000 000 so'm</strong> foyda ko'rgan, lekin davlatga
+                    hujjatlar asosida <strong>170 000 000 so'm</strong> dan foyda solig'i to'laydi.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Natijalar -->
+        <div class="slide" id="slide-9">
+            <div class="title-wrapper" style="text-align: center; margin-bottom: 30px;">
+                <h2>37-darsdan olingan natijalar</h2>
+            </div>
+            <div class="glass-box">
+                <div class="calc-step">
+                    <span class="calc-step-title">1. Hisobotlar farqi:</span>
+                    Soliq hisobotlari va moliyaviy hisobotlarning topshirilish muddatlari hamda maqsadlari bo'yicha
+                    farqlarini o'rgandik.
+                </div>
+                <div class="calc-step">
+                    <span class="calc-step-title">2. Foyda solig'ining mohiyati:</span>
+                    Kimlar bu soliqni to'lashi (rezidentlar va norezidentlar) hamda ularga tushadigan asosiy soliq
+                    stavkalari (15%, 20%, 0%) bilan tanishdik.
+                </div>
+                <div class="calc-step">
+                    <span class="calc-step-title">3. Buxgalteriya va soliq hisobidagi farq:</span>
+                    Buxgalteriya foydasi va soliqqa tortiladigan foyda o'rtasidagi tafovut, hamda qaysi xarajatlar
+                    daromaddan chegirilishini tahlil qildik.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Yakun -->
+        <div class="slide" id="slide-10">
+            <h1
+                style="text-align: center; line-height: 1.3; font-size: 3.5rem; letter-spacing: -1px; margin-top: 100px;">
+                O'SISHDAN<br>
+                <span style="color: var(--primary-green);">TO'XTAMANG!</span>
+                🚀
+            </h1>
+            <p
+                style="font-size: 1.3rem; color: var(--primary-green); margin-top: 25px; opacity: 0.6; text-align: center;">
+                BILIMLARNI AMALIYOTDA QO'LLANG</p>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="controls">
+        <div class="control-btn" onclick="prevSlide()">❮</div>
+        <div class="control-btn" onclick="nextSlide()">❯</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            updateProgressBar();
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        function updateProgressBar() {
+            const progressBar = document.getElementById('progressBar');
+            if (progressBar) {
+                const progress = ((currentSlide + 1) / slides.length) * 100;
+                progressBar.style.width = progress + '%';
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>
